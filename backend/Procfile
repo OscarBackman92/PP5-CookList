@@ -1,1 +1,1 @@
-web: gunicorn cocklist.wsgi --log-file -
+web: gunicorn cooklist.wsgi --log-file -
