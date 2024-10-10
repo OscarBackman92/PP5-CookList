@@ -1,0 +1,1 @@
+web: gunicorn backend.cooklist.wsgi --log-file -
