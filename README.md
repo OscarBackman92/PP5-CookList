@@ -1,131 +1,116 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Cooklist
 
-Welcome USER_NAME,
+## Project Overview
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Cooklist is a content-sharing web application that allows users to share recipes, plan meals, and create shopping lists. This application features a Django REST Framework backend and a React frontend. The goal is to create an interactive platform where users can manage their culinary activities seamlessly.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+## Features
 
-## Gitpod Reminders
+- User registration and login
+- Profile management
+- Recipe CRUD operations (Create, Read, Update, Delete)
+- Commenting on recipes
+- Rating recipes
+- Marking recipes as favorites
+- Meal planning
+- Generating shopping lists
+- Filtering recipes by tags or dietary preferences
+- Securing the application
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Project Structure
 
-`python3 -m http.server`
+Cooklist/ ├── backend/ │ ├── api/ │ │ ├── migrations/ │ │ ├── admin.py │ │ ├── apps.py │ │ ├── models.py │ │ ├── serializers.py │ │ ├── tests.py │ │ ├── urls.py │ │ ├── views.py │ ├── backend/ │ │ ├── init.py │ │ ├── asgi.py │ │ ├── settings.py │ │ ├── urls.py │ │ ├── wsgi.py │ ├── profiles/ │ │ ├── migrations/ │ │ ├── admin.py │ │ ├── apps.py │ │ ├── models.py │ │ ├── serializers.py │ │ ├── tests.py │ │ ├── urls.py │ │ ├── views.py │ ├── .env │ ├── manage.py │ ├── Procfile │ ├── requirements.txt │ └── README.md └── frontend/
 
-A blue button should appear to click: _Make Public_,
+## User Stories
 
-Another blue button should appear to click: _Open Browser_.
+1. **User Registration and Login**
+   - As a user, I want to register and log in to the application so that I can access my account.
+   - Acceptance Criteria: Users can register, log in, and receive feedback for unsuccessful login attempts.
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+2. **View Recipes**
+   - As a user, I want to view a list of available recipes so that I can find ideas for meals.
+   - Acceptance Criteria: Users can see all recipes in a list format.
 
-A blue button should appear to click: _Make Public_,
+3. **Add Recipe**
+   - As a user, I want to add my own recipes so that I can share them with others.
+   - Acceptance Criteria: Users can fill out a form to add new recipes.
 
-Another blue button should appear to click: _Open Browser_.
+4. **Edit Recipe**
+   - As a user, I want to edit my recipes so that I can update them with new information.
+   - Acceptance Criteria: Users can edit their existing recipes.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+5. **Delete Recipe**
+   - As a user, I want to delete my recipes if I no longer want to share them.
+   - Acceptance Criteria: Users can delete their recipes with confirmation.
 
-To log into the Heroku toolbelt CLI:
+6. **View Recipe Details**
+   - As a user, I want to see the details of a specific recipe so that I can understand how to prepare it.
+   - Acceptance Criteria: Users can click on a recipe to see its detailed view.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+7. **Comment on Recipe**
+   - As a user, I want to comment on recipes so that I can share my thoughts and feedback.
+   - Acceptance Criteria: Users can add and view comments on recipes.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+8. **Rate Recipe**
+   - As a user, I want to rate recipes so that I can indicate my preference for them.
+   - Acceptance Criteria: Users can give a rating to a recipe.
 
-### Connecting your Mongo database
+9. **Mark Recipe as Favorite**
+   - As a user, I want to mark recipes as favorites so that I can easily find them later.
+   - Acceptance Criteria: Users can mark and unmark recipes as favorites.
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+10. **Meal Planning**
+    - As a user, I want to plan my meals for the week so that I can stay organized.
+    - Acceptance Criteria: Users can create and view their meal plans.
 
-------
+11. **Generate Shopping List**
+    - As a user, I want to generate a shopping list based on my meal plan so that I can easily shop for ingredients.
+    - Acceptance Criteria: Users can create a shopping list from selected recipes.
 
-## Release History
+12. **Filter Recipes by Tags or Dietary Preferences**
+    - As a user, I want to filter recipes based on tags or dietary preferences so that I can find suitable options.
+    - Acceptance Criteria: Users can filter recipes using various criteria.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+13. **Profile Management**
+    - As a user, I want to manage my profile so that I can update my information and preferences.
+    - Acceptance Criteria: Users can view and edit their profile information.
 
-**June 18, 2024,** Add Mongo back into template
+14. **Secure the Application**
+    - As a developer, I want to secure the application to protect user data.
+    - Acceptance Criteria: The application implements security measures for user data.
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+15. **API Integration**
+    - As a user, I want the frontend to interact seamlessly with the backend API.
+    - Acceptance Criteria: The frontend can perform CRUD operations on the backend.
 
-**May 28 2024:** Fix Mongo and Links installs
+## Environment Variables
 
-**April 26 2024:** Update node version to 16
+- `SECRET_KEY`: The secret key for Django.
+- `DATABASE_URL`: The URL for connecting to the database.
+- `CLOUDINARY_URL`: The URL for Cloudinary storage.
 
-**September 20 2023:** Update Python version to 3.9.17.
+## Deployment
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+To deploy the application on Heroku:
+1. Create a new Heroku app.
+2. Set up the environment variables in Heroku.
+3. Push the code to Heroku using Git.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Getting Started
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+1. Clone the repository: `git clone https://github.com/yourusername/Cooklist.git`
+2. Navigate to the backend directory: `cd Cooklist/backend`
+3. Set up a virtual environment: `python -m venv venv`
+4. Activate the virtual environment:
+   - On Windows: `venv\Scripts\activate`
+   - On macOS/Linux: `source venv/bin/activate`
+5. Install the dependencies: `pip install -r requirements.txt`
+6. Run the server: `python manage.py runserver`
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Contributing
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any enhancements or bugs.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## License
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
