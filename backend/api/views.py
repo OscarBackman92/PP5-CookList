@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from .models import Recipe
+from .serializers import RecipeSerializer
+from rest_framework import viewsets
 
-# Create your views here.
+class RecipeViewSet(viewsets.ModelViewSet):
+    queryset = Recipe.objects.all()
+    serializer_class = RecipeSerializer
