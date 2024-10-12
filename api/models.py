@@ -18,13 +18,13 @@ class Recipe(models.Model):
         ('walden', 'Walden'),
         ('xpro2', 'X-pro II')
     ]
-       
+
     title = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(
         upload_to='../images/', default='../images/default_post_vlvmq3', blank=True
     )
-    image_filter = models.CharField(max_length=255, null=True, blank=True) 
+    image_filter = models.CharField(max_length=255, choices=image_filter_choices, null=True, blank=True)
     ingredients = models.TextField()
     instructions = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
