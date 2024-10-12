@@ -1,7 +1,6 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 from .models import Recipe
 from .serializers import RecipeSerializer
-from rest_framework import viewsets
 
 class RecipeViewSet(viewsets.ModelViewSet):
     queryset = Recipe.objects.all()
