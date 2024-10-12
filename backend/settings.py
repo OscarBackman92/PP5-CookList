@@ -79,6 +79,7 @@ INSTALLED_APPS = [
     'backend',
     'api',
     'profiles',
+    'followers',
 ]
 
 MIDDLEWARE = [
