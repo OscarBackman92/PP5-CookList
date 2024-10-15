@@ -22,11 +22,8 @@ class RecipeList(generics.ListCreateAPIView):
         filters.SearchFilter,
         DjangoFilterBackend,
     ]
-    filterset_fields = [
-        'owner__followed__owner__profile',
-        'likes__owner__profile',
-        'owner__profile',
-    ]
+
+
     search_fields = [
         'owner__username',
         'title',
