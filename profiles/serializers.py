@@ -5,7 +5,8 @@ from followers.models import Follower
 
 class ProfileSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
-    name = serializers.CharField(required=False)
+    bio = serializers.CharField(required=False)
+    dietary_preferences = serializers.CharField(required=False)
     is_owner = serializers.SerializerMethodField()
     following_id = serializers.SerializerMethodField()
     followers_count = serializers.ReadOnlyField()
@@ -27,7 +28,8 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = [
-            'id', 'owner', 'created_at', 'updated_at', 'name', 'bio',
-            'image', 'is_owner', 'following_id',
-            'followers_count', 'following_count',
+            'id', 'owner', 'created_at', 'updated_at',
+            'bio', 'dietary_preferences', 'image',
+            'is_owner', 'following_id', 'followers_count',
+            'following_count',
         ]
